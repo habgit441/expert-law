@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Logo from '@/public/image/Logo.jpg';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-scroll';
@@ -27,7 +26,7 @@ const Hero = () => {
       <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Image src={Logo} alt="Logo" width={40} height={40} className="rounded-full" />
+            <Image src="/image/Logo.jpg" alt="Logo" width={40} height={40} className="rounded-full" />
             <div className="text-black font-bold text-xl">SupremeLaw</div>
           </div>
 

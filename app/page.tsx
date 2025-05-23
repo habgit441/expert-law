@@ -4,7 +4,7 @@ import About from "./component/About";
 import CaseHighlights from "./component/CaseHighlights";
 import Testimonials from "./component/Testimonials";
 import SocialLinks from "./component/SocialLinks";
-
+import Footer from "./component/Footer";
 export default function Home() {
   return (
     <div className="">
@@ -15,6 +15,7 @@ export default function Home() {
        <About />
         <CaseHighlights />
          <Testimonials />
+         < Footer />
     </main>
     </div>
   );
