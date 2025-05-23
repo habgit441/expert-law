@@ -37,8 +37,8 @@ const Testimony = () => {
         <p className="text-gray-500 mt-2 text-lg">Real words. Real people. Real results.</p>
       </div>
 
+      {/* Mobile - scrollable cards */}
       <div className="block lg:hidden">
-        {/* Scrollable flex for mobile */}
         <motion.div
           className="flex gap-4 overflow-x-auto no-scrollbar px-1"
           initial={{ x: 0 }}
@@ -73,8 +73,8 @@ const Testimony = () => {
         </motion.div>
       </div>
 
+      {/* Desktop - grid layout */}
       <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-8">
-        {/* Grid layout for desktop */}
         {testimonies.map((testimony, index) => (
           <motion.div
             key={index}
