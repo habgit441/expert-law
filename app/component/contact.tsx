@@ -31,7 +31,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-100 flex items-center justify-center py-20 px-4">
+    <section id="contact" className="min-h-screen bg-gray-100 flex items-center justify-center py-20 px-4">
       <div className="w-full max-w-4xl">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-2">
           Send <span className="text-blue-600">Email</span>

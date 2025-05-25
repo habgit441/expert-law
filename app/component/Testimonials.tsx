@@ -29,7 +29,7 @@ const testimonies = [
 
 const Testimony = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden">
+    <section id="service" className="bg-white py-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-hidden">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">
           What My <span className="text-blue-600">Clients Say</span>

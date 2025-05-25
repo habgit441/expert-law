@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="bg-white text-gray-900 min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
+    <section id="about" className="bg-white text-gray-900 min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mt-20">
         <motion.div
           initial={{ opacity: 0, x: -100 }}

@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -9,10 +10,18 @@ const Hero = () => {
   const [navOpen, setNavOpen] = useState(false);
   const toggleNav = () => setNavOpen(!navOpen);
 
-  const navLinks = ['Home', 'Service', 'About', 'Contact'];
+  const navLinks = [
+    { label: 'Home', id: 'hero' },
+    { label: 'Service', id: 'service' },
+    { label: 'About', id: 'about' },
+    { label: 'Contact', id: 'contact' },
+  ];
 
   return (
-    <div className="relative h-screen w-full overflow-hidden font-sans">
+    <section
+      id="hero"
+      className="relative h-screen w-full overflow-hidden font-sans scroll-mt-20"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
@@ -25,48 +34,58 @@ const Hero = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Image src="/image/Logo.jpg" alt="Logo" width={40} height={40} className="rounded-full" />
+            <Image
+              src="/image/Logo.jpg"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
             <div className="text-black font-bold text-xl">SupremeLaw</div>
           </div>
 
-          {/* Desktop Links */}
+          {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-6 font-medium text-sm md:text-base text-black">
-            {navLinks.map((link) => (
-              <li key={link}>
+            {navLinks.map(({ label, id }) => (
+              <li key={id}>
                 <Link
-                  to={link.toLowerCase()}
+                  to={id}
                   smooth={true}
                   duration={600}
                   offset={-70}
                   className="hover:text-blue-600 cursor-pointer transition"
                 >
-                  {link}
+                  {label}
                 </Link>
               </li>
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden text-2xl cursor-pointer text-black" onClick={toggleNav}>
+          {/* Mobile Menu Toggle */}
+          <div
+            className="md:hidden text-2xl cursor-pointer text-black"
+            onClick={toggleNav}
+          >
             {navOpen ? <FaTimes /> : <FaBars />}
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Navigation Menu */}
         {navOpen && (
           <ul className="md:hidden bg-white px-6 py-4 space-y-4 text-black font-medium shadow-md">
-            {navLinks.map((link) => (
-              <li key={link}>
+            {navLinks.map(({ label, id }) => (
+              <li key={id}>
                 <Link
-                  to={link.toLowerCase()}
+                  to={id}
                   smooth={true}
                   duration={600}
                   offset={-70}
                   onClick={toggleNav}
                   className="block hover:text-blue-600 cursor-pointer transition"
                 >
-                  {link}
+                  {label}
                 </Link>
               </li>
             ))}
@@ -74,7 +93,7 @@ const Hero = () => {
         )}
       </nav>
 
-      {/* Hero Content */}
+      {/* Hero Text */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-white text-4xl md:text-6xl font-extrabold drop-shadow-xl">
           <Typewriter
@@ -88,7 +107,7 @@ const Hero = () => {
           />
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 
